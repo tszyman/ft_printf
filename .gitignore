@@ -1,0 +1,17 @@
+# ignore vscode directory
+.vscode
+
+# ignore pdf files
+*.pdf
+
+# ignore object files
+*.o
+
+# ignore Makefile for now
+#Makefile
+
+# ignore test program
+testy/
+42_get_next_line_tester/
+gnlTester/
+42test-gnl-station-2022/
