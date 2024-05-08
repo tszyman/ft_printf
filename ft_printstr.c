@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/04 14:04:03 by tomek             #+#    #+#             */
-/*   Updated: 2024/05/08 18:48:19 by tomek            ###   ########.fr       */
+/*   Created: 2024/05/08 18:25:26 by tomek             #+#    #+#             */
+/*   Updated: 2024/05/08 18:54:01 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdint.h>
+int	ft_printstr(char *str)
+{
+	int	i;
 
-int	ft_printf(const char *format, ...);
-int	ft_printchar(int c);
-int	ft_printstr(char *str);
-int	ft_printp(void *p);
-int	ft_printnbr(long n, int base);
-
-#endif
+	i = 0;
+	if (!str)
+		str = "null";
+	while (*str)
+	{
+		ft_printchar((int)*str);
+		i++;
+		str++;
+	}
+	return (i);
+}
