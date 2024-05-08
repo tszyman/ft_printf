@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 18:45:07 by tomek             #+#    #+#             */
-/*   Updated: 2024/05/08 19:15:35 by tomek            ###   ########.fr       */
+/*   Updated: 2024/05/08 19:16:58 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_printp_rec(uintptr_t n)
 	else
 	{
 		count = ft_printp_rec(n / 16);
-		count += ft_printnbr(n % 16);
+		count += ft_printp_rec(n % 16);
 	}
 	return (count);
 }
