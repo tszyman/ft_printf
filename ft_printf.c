@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 14:07:01 by tomek             #+#    #+#             */
-/*   Updated: 2024/05/08 19:20:31 by tomek            ###   ########.fr       */
+/*   Updated: 2024/05/08 19:37:45 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 static int	ft_option(va_list args, int c)
 {
-	int	i;
+	int	count;
 
-	i = 0;
+	count = 0;
 	if (c == 'c')
-		i += ft_printchar(va_arg(args, int));
+		count += ft_printchar(va_arg(args, int));
 	else if (c == 's')
-		i += ft_printstr(va_arg(args, char *));
+		count += ft_printstr(va_arg(args, char *));
 	else if (c == 'p')
-		i += ft_printp(va_arg(args, void *));
+		count += ft_printp(va_arg(args, void *));
 	else if (c == 'd' || c == 'i')
-		i += ft_printnbr((long)va_arg(args, int), 10);
+		count += ft_printnbr((long)va_arg(args, int), 10);
 	else if (c == 'u')
-		i += ft_printnbr((long)va_arg(args, unsigned int), 10);
+		count += ft_printnbr((long)va_arg(args, unsigned int), 10);
 	else if (c == 'x' || c == 'X')
-		i += ft_printnbr((long)va_arg(args, int), 16);
+		count += ft_printnbr((long)va_arg(args, unsigned int), 16);
 	else if (c == '%')
-		i += ft_printchar(c);
-	return (i);
+		count += ft_printchar(c);
+	return (count);
 }
 
 int	ft_printf(const char *format, ...)

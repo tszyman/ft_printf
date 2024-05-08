@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 18:54:37 by tomek             #+#    #+#             */
-/*   Updated: 2024/05/08 19:04:31 by tomek            ###   ########.fr       */
+/*   Updated: 2024/05/08 20:32:54 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	ft_printnbr(long n, int base)
 	else
 	{
 		count = ft_printnbr(n / base, base);
-		count += ft_printnbr(n % base, base);
+		return count + ft_printnbr(n % base, base);
 	}
-	return (count);
 }
