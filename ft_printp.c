@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 18:45:07 by tomek             #+#    #+#             */
-/*   Updated: 2024/05/08 19:16:58 by tomek            ###   ########.fr       */
+/*   Updated: 2024/05/08 19:24:13 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ static int	ft_printp_rec(uintptr_t n)
 int	ft_printp(void *p)
 {
 	uintptr_t	n;
-	int			count;
 
 	if (!p)
 		return (ft_printstr("(nil)"));
