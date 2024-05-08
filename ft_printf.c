@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 14:07:01 by tomek             #+#    #+#             */
-/*   Updated: 2024/05/06 21:40:16 by tomek            ###   ########.fr       */
+/*   Updated: 2024/05/08 16:52:00 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ static int	ft_option(va_list args, int c)
 	else if (c == 'p')
 		i += ft_printp(va_arg(args, void *));
 	else if (c == 'd' || c == 'i')
-		i += ft_printnbr(va_arg(args, int), 10);
+		i += ft_printnbr((long)va_arg(args, int), 10);
 	else if (c == 'u')
-		i += ft_printnbr(va_arg(args, unsigned int), 10);
+		i += ft_printnbr((long)va_arg(args, unsigned int), 10);
 	else if (c == 'x' || c == 'X')
-		i += ft_printnbr(va_arg(args, int), 16);
+		i += ft_printnbr((long)va_arg(args, int), 16);
 	else if (c == '%')
 		i += ft_printchar(c);
 	return (i);
