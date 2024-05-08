@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 14:07:01 by tomek             #+#    #+#             */
-/*   Updated: 2024/05/08 16:52:00 by tomek            ###   ########.fr       */
+/*   Updated: 2024/05/08 19:20:31 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_printf(const char *format, ...)
 			len += ft_option(args, *(++format));
 		}
 		else
-			len += ft_putchar(*format);
+			len += ft_printchar(*format);
 		format++;
 	}
 	va_end(args);
