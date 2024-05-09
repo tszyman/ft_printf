@@ -6,7 +6,7 @@
 /*   By: tomek <tomek@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 14:07:01 by tomek             #+#    #+#             */
-/*   Updated: 2024/05/08 19:37:45 by tomek            ###   ########.fr       */
+/*   Updated: 2024/05/09 21:56:06 by tomek            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,17 @@ static int	ft_option(va_list args, int c)
 	else if (c == 'p')
 		count += ft_printp(va_arg(args, void *));
 	else if (c == 'd' || c == 'i')
-		count += ft_printnbr((long)va_arg(args, int), 10);
+		count += ft_printnbr((long)va_arg(args, int),
+				10, "0123456789");
 	else if (c == 'u')
-		count += ft_printnbr((long)va_arg(args, unsigned int), 10);
-	else if (c == 'x' || c == 'X')
-		count += ft_printnbr((long)va_arg(args, unsigned int), 16);
+		count += ft_printnbr((long)va_arg(args, unsigned int),
+				10, "0123456789");
+	else if (c == 'x')
+		count += ft_printnbr((long)va_arg(args, unsigned int),
+				16, "0123456789abcdef");
+	else if (c == 'X')
+		count += ft_printnbr((long)va_arg(args, unsigned int),
+				16, "0123456789ABCDEF");
 	else if (c == '%')
 		count += ft_printchar(c);
 	return (count);
